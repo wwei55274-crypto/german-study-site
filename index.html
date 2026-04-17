@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>德语学习</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Noto+Serif+SC:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-home">
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-toolbar">
+        <nav class="top-switch" aria-label="主导航">
+          <button id="nav-grammar-button" class="switch-button is-active" type="button" data-view-target="grammar">语法</button>
+          <button id="nav-favorites-button" class="switch-button" type="button" data-view-target="favorites">收藏</button>
+        </nav>
+
+        <div class="hero-toolbar-actions">
+          <div class="lang-switch" aria-label="语言切换">
+            <button class="lang-button" type="button" data-lang-option="zh">中文</button>
+            <button class="lang-button" type="button" data-lang-option="en">English</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-copy">
+        <p class="eyebrow">German Grammar</p>
+        <h1 id="home-hero-title">用更轻松的方式整理德语语法</h1>
+        <p id="home-hero-text" class="hero-text">
+          从 A1 到 A2，按照等级浏览常见语法知识点，建立一套清晰、安静、好用的学习界面。
+        </p>
+      </div>
+    </header>
+
+    <main class="content-stack">
+      <section id="home-local-ai-config-panel" class="panel home-publish-panel is-visible" hidden></section>
+      <section id="home-local-publish-panel" class="panel home-publish-panel is-visible" hidden></section>
+      <section class="panel is-visible" data-view="grammar" aria-label="语法等级">
+        <div class="panel-header">
+          <div>
+            <p class="section-kicker">Grammar Levels</p>
+            <h2 id="home-levels-title">选择你的学习阶段</h2>
+          </div>
+          <p id="home-levels-note" class="section-note">点击卡片进入对应详情页</p>
+        </div>
+
+        <div class="level-grid">
+          <a class="level-card" href="list.html?level=A1">
+            <span class="level-badge">A1</span>
+            <h3 id="home-a1-title">基础表达</h3>
+            <p id="home-a1-text">从人称代词、冠词、现在时到基础问句，构建最先需要掌握的核心结构。</p>
+            <span id="home-a1-link" class="card-link">进入 A1</span>
+          </a>
+
+          <a class="level-card" href="list.html?level=A2">
+            <span class="level-badge">A2</span>
+            <h3 id="home-a2-title">日常进阶</h3>
+            <p id="home-a2-text">继续学习完成时、从句、比较级和常见介词搭配，提升表达密度。</p>
+            <span id="home-a2-link" class="card-link">进入 A2</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="panel" data-view="favorites" aria-label="收藏内容">
+        <div class="panel-header">
+          <div>
+            <p class="section-kicker">Saved Notes</p>
+            <h2 id="home-favorites-title">收藏夹</h2>
+          </div>
+          <p id="home-favorites-note" class="section-note">保留你最常回看的语法卡片</p>
+        </div>
+
+        <div class="favorite-grid">
+          <a class="favorite-card" href="detail.html?level=A1&topic=verben-1">
+            <span class="favorite-tag">A1</span>
+            <h3 id="home-fav-1-title">动词现在时变位</h3>
+            <p id="home-fav-1-text">掌握 ich / du / er-sie-es / wir / ihr / sie 的基础变化。</p>
+            <span id="home-fav-1-link" class="card-link">继续复习</span>
+          </a>
+          <a class="favorite-card" href="detail.html?level=A1&topic=pronomen-nomen-artikel">
+            <span class="favorite-tag">A1</span>
+            <h3 id="home-fav-2-title">一般疑问句与 W-Fragen</h3>
+            <p id="home-fav-2-text">常见问句词包括 wer、wie、wo、was，适合高频复习。</p>
+            <span id="home-fav-2-link" class="card-link">继续复习</span>
+          </a>
+          <a class="favorite-card" href="detail.html?level=A2&topic=subordinate-clauses">
+            <span class="favorite-tag">A2</span>
+            <h3 id="home-fav-3-title">weil 与 dass 从句</h3>
+            <p id="home-fav-3-text">注意连词引导从句时，变位动词通常置于句末。</p>
+            <span id="home-fav-3-link" class="card-link">继续复习</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="translations.js"></script>
+  <script src="grammar-data.js"></script>
+  <script src="a1-outline.js"></script>
+  <script src="script.js"></script>
+  <script src="progress.js"></script>
+</body>
+</html>

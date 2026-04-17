@@ -1,0 +1,69 @@
+{
+  "A1::verben-1::1.1": {
+    "languages": {
+      "zh": {
+        "overview": "内容对应《材料_优化版》里的 Kapitel 1。网页版保留了原书的核心表格、练习顺序和语境方向，再额外做成更适合点读和练习的交互结构。哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈",
+        "tip": "先判断“代词指谁”或“代词指什么”，再去选形式，做题会稳很多。",
+        "focus": [
+          "先掌握 ich / du / er / sie / es / wir / ihr / sie / Sie 这一整套基本形式。",
+          "把 du / ihr 和正式的 Sie 区分清楚，这是 A1 对话里的高频错误点。",
+          "指物时，代词要跟着名词的词性走：das Messer -> es, die Gabel -> sie。",
+          "句首大写的 Sie 可能是礼貌称呼，也可能是普通的 sie，只能靠语境判断。"
+        ],
+        "answerSheetNote": "答案区根据材料中的 Kapitel 1 内容整理成逐题可读版本，便于网页里直接核对。",
+        "quickExerciseExplanations": {}
+      }
+    },
+    "answers": {
+      "book": {
+        "1:0": "er",
+        "1:1": "sie",
+        "1:2": "Sie",
+        "2:0": "du",
+        "2:1": "ihr",
+        "2:2": "Sie",
+        "3:0": "Sie",
+        "3:1": "Sie",
+        "3:2": "Sie",
+        "3:3": "du / ich",
+        "4:0": "Er",
+        "4:1": "Es",
+        "4:2": "Sie",
+        "4:3": "Sie",
+        "4:4": "sie",
+        "4:5": "er",
+        "5:0": "Sie",
+        "5:1": "Er",
+        "5:2": "Er",
+        "5:3": "wir",
+        "5:4": "Wir",
+        "5:5": "Er",
+        "5:6": "Ich / du",
+        "5:7": "ich",
+        "6:0": "du",
+        "6:1": "Sie",
+        "6:2": "ihr",
+        "6:3": "Sie"
+      },
+      "reference": {
+        "0": "Frau Peneva",
+        "1": "Anne",
+        "2": "die Kinder",
+        "3": "Olga Peneva",
+        "4": "Olga Peneva",
+        "5": "die Blumen",
+        "6": "Frau Peneva",
+        "7": "Frau Peneva"
+      },
+      "answerSheet": [
+        "1: er / sie / Sie",
+        "2: du / ihr / Sie",
+        "3: Sie / Sie / Sie / du / ich",
+        "4: Er / Es / Sie / Sie / sie / er",
+        "5: Sie / Er / Er / wir / Wir / Er / Ich / du / ich",
+        "6: du / Sie / ihr / Sie",
+        "7: Frau Peneva / Anne / die Kinder / Olga Peneva / Olga Peneva / die Blumen / Frau Peneva / Frau Peneva"
+      ]
+    }
+  }
+}
