@@ -1,0 +1,42 @@
+# 默认仓库负责人
+* @wwei55274-crypto
+
+# 区域 1：页面结构与视觉样式
+/index.html @wwei55274-crypto
+/list.html @wwei55274-crypto
+/detail.html @wwei55274-crypto
+/styles.css @wwei55274-crypto
+
+# 区域 2：前端交互与学习逻辑
+/script.js @wwei55274-crypto
+/progress.js @wwei55274-crypto
+
+# 区域 3：学习内容与多语言数据
+/grammar-data.js @wwei55274-crypto
+/reading-data.js @wwei55274-crypto
+/a1-outline.js @wwei55274-crypto
+/a1-subunits.js @wwei55274-crypto
+/translations.js @wwei55274-crypto
+
+# 区域 4：本地服务、AI bridge 与发布能力
+/local_site_server.js @wwei55274-crypto
+/local_ai_bridge.js @wwei55274-crypto
+/public_share.js @wwei55274-crypto
+/platform_paths.js @wwei55274-crypto
+/build_a1_handbook.js @wwei55274-crypto
+/deploy/ @wwei55274-crypto
+/run-study-*.sh @wwei55274-crypto
+/start-*.sh @wwei55274-crypto
+/start-*.bat @wwei55274-crypto
+/start-*.command @wwei55274-crypto
+/start-*.ps1 @wwei55274-crypto
+/stop-*.sh @wwei55274-crypto
+/stop-*.bat @wwei55274-crypto
+/stop-*.command @wwei55274-crypto
+/stop-*.ps1 @wwei55274-crypto
+
+# 区域 5：文档与协作规则
+/README.md @wwei55274-crypto
+/README-mac.md @wwei55274-crypto
+/docs/ @wwei55274-crypto
+/.github/ @wwei55274-crypto

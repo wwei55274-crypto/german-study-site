@@ -36,6 +36,8 @@
 4. 完成后推送分支并发起 Pull Request
 5. 合并前至少让另一位同事看一遍改动
 
+更细的区域分工和分支建议见 `docs/collaboration-zones.md`。
+
 ## 建议分工
 
 - 页面结构和样式：`index.html`、`detail.html`、`list.html`、`styles.css`
@@ -44,6 +46,12 @@
 - 本地服务和 AI bridge：`local_site_server.js`、`local_ai_bridge.js`
 
 这样拆分后，两个人同时开发时冲突会少很多。
+
+仓库里已经补充了适合 GitHub 协作的文件：
+
+- `.github/CODEOWNERS`
+- `.github/PULL_REQUEST_TEMPLATE.md`
+- `docs/collaboration-zones.md`
 
 ## 首次克隆后的检查
 
