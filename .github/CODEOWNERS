@@ -1,22 +1,19 @@
 # 默认仓库负责人
 * @wwei55274-crypto
 
-# 区域 1：页面结构与视觉样式
+# 根目录兼容入口
 /index.html @wwei55274-crypto
 /list.html @wwei55274-crypto
 /detail.html @wwei55274-crypto
-/styles.css @wwei55274-crypto
 
-# 区域 2：前端交互与学习逻辑
-/script.js @wwei55274-crypto
-/progress.js @wwei55274-crypto
+# 语法板块
+/grammar/ @wwei55274-crypto
 
-# 区域 3：学习内容与多语言数据
-/grammar-data.js @wwei55274-crypto
-/reading-data.js @wwei55274-crypto
-/a1-outline.js @wwei55274-crypto
-/a1-subunits.js @wwei55274-crypto
-/translations.js @wwei55274-crypto
+# 阅读板块
+/reading/ @lilywayn-web
+
+# 公共逻辑与共享资源
+/shared/ @wwei55274-crypto @lilywayn-web
 
 # 区域 4：本地服务、AI bridge 与发布能力
 /local_site_server.js @wwei55274-crypto

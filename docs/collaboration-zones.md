@@ -1,100 +1,99 @@
 # 协作分区说明
 
-这个项目目前还没有按目录拆成很多模块，所以协同开发时，最好先按“职责区域”分工，而不是让大家随便改根目录里的文件。
+这个项目现在已经拆成了 `grammar/`、`reading/` 和 `shared/` 三块。最推荐的协作方式是先按目录分工，再尽量少碰共享文件。
 
 ## 核心原则
 
 1. 一个功能分支尽量只改一个主区域
 2. 如果必须跨区域改动，在 Pull Request 里写清楚原因
 3. 开始开发前先 `git pull origin main`
-4. `script.js`、`styles.css`、`local_site_server.js` 属于高冲突文件，改之前先和同事打招呼
+4. `shared/app-core.js`、`shared/common.css`、`local_site_server.js` 属于高冲突文件，改之前先和同事打招呼
 
-## 区域 1：页面结构与视觉样式
+## 区域 1：语法板块
 
 适合负责：
 
-- 首页、列表页、详情页的静态结构
-- 页面排版、颜色、按钮、卡片、弹窗样式
-- 文案布局和视觉调整
+- 语法列表页和语法详情页
+- 语法数据、语法子单元、语法练习内容
+- 语法板块的局部样式
 
 主要文件：
 
-- `index.html`
-- `list.html`
-- `detail.html`
-- `styles.css`
+- `grammar/list.html`
+- `grammar/detail.html`
+- `grammar/grammar-data.js`
+- `grammar/a1-outline.js`
+- `grammar/a1-subunits.js`
+- `grammar/grammar-app.js`
+- `grammar/grammar.css`
 
 推荐分支前缀：
 
+- `grammar/...`
+- `content/grammar/...`
+
+提交前至少检查：
+
+- `grammar/list.html?level=A1` 能正常打开
+- 语法详情页能正常跳转
+- 语法练习能正常显示
+
+## 区域 2：阅读板块
+
+适合负责：
+
+- 阅读列表页和阅读详情页
+- 阅读题组、原文、问题和答案内容
+- 阅读板块的局部样式
+
+主要文件：
+
+- `reading/list.html`
+- `reading/detail.html`
+- `reading/reading-data.js`
+- `reading/reading-app.js`
+- `reading/reading.css`
+
+推荐分支前缀：
+
+- `reading/...`
+- `content/reading/...`
+
+提交前至少检查：
+
+- `reading/list.html?level=A1&part=reading` 能正常打开
+- 阅读详情页能正常跳转
+- 阅读题目和答案能正常显示
+
+## 区域 3：公共逻辑与共享资源
+
+适合负责：
+
+- 首页、语言切换、进度保存
+- 列表和详情的公共渲染逻辑
+- 公共样式、公共翻译、兼容跳转页
+
+主要文件：
+
+- `shared/app-core.js`
+- `shared/progress.js`
+- `shared/translations.js`
+- `shared/common.css`
+- `index.html`
+- `list.html`
+- `detail.html`
+
+推荐分支前缀：
+
+- `shared/...`
 - `ui/...`
-- `style/...`
+- `logic/...`
 
 提交前至少检查：
 
 - 首页能正常打开
-- 列表页能正常跳转
-- 详情页样式没有明显错位
-
-## 区域 2：前端交互与学习逻辑
-
-适合负责：
-
-- 页面切换、语言切换
-- 列表渲染、详情渲染
-- 练习交互、AI 对话、发布面板
-- 学习进度保存与恢复
-
-主要文件：
-
-- `script.js`
-- `progress.js`
-
-在 `script.js` 里再细分为：
-
-- 首页与列表：`renderHomePage`、`renderListPage`
-- 详情与练习：`renderDetailPage`、`renderSubunitPage`、`renderExercises`
-- AI 功能：`checkAiAvailability`、`openAiChat`、`sendAiMessage`
-- 本地编辑与发布：`renderLocalDetailEditor`、`saveLocalDetailEditor`、`publishLocalDetailEditor`
-
-推荐分支前缀：
-
-- `logic/...`
-- `feature/...`
-
-提交前至少检查：
-
-- 首页标签切换正常
-- 列表页能正常渲染卡片
-- 详情页练习题可以作答
-- 进度保存不报错
-
-## 区域 3：学习内容与多语言数据
-
-适合负责：
-
-- 语法点内容整理
-- 子单元、阅读材料、翻译文案
-- 示例、练习、答案和说明
-
-主要文件：
-
-- `grammar-data.js`
-- `reading-data.js`
-- `a1-outline.js`
-- `a1-subunits.js`
-- `translations.js`
-
-推荐分支前缀：
-
-- `content/...`
-- `data/...`
-- `i18n/...`
-
-提交前至少检查：
-
-- 新增内容能在页面上显示
-- 页面切换中英文时没有空白文案
-- 详情页练习和答案能正确显示
+- 语法和阅读入口都能跳对页面
+- 中英文切换和进度保存不报错
 
 ## 区域 4：本地服务、AI bridge 与发布能力
 
@@ -159,28 +158,24 @@
 
 ### 两个人时
 
-- 同事 A：区域 1 + 区域 5
-- 同事 B：区域 2 + 区域 3 + 区域 4
-
-如果两个人都要改前端，尽量这样拆：
-
-- 同事 A：`index.html`、`list.html`、`detail.html`、`styles.css`
-- 同事 B：`script.js`、`progress.js`、数据文件
+- 你：`grammar/`
+- 同事：`reading/`
+- 共享改动提前打招呼：`shared/`、`index.html`、`local_site_server.js`
 
 ### 三个人时
 
-- 同事 A：页面结构与样式
-- 同事 B：学习内容与翻译
-- 同事 C：交互逻辑、进度系统、本地服务
+- 同事 A：`grammar/`
+- 同事 B：`reading/`
+- 同事 C：`shared/` 和本地服务
 
 ## 高冲突文件提醒
 
 下面这些文件最好不要两个人同时长时间开发：
 
-- `script.js`
-- `styles.css`
+- `shared/app-core.js`
+- `shared/common.css`
 - `local_site_server.js`
-- `grammar-data.js`
+- `index.html`
 
 如果一定要同时修改，建议：
 
@@ -196,4 +191,4 @@
 2. 我改了哪些文件
 3. 我自己测试了什么
 
-如果一个 PR 同时改了 `styles.css`、`script.js`、`local_site_server.js`，通常说明改动太大了，最好拆开。
+如果一个 PR 同时改了 `shared/common.css`、`shared/app-core.js`、`local_site_server.js`，通常说明改动太大了，最好拆开。

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>阅读列表</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Noto+Serif+SC:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/common.css">
+  <link rel="stylesheet" href="reading.css">
+</head>
+<body class="page-list page-reading-list">
+  <div class="page-shell">
+    <header class="list-hero">
+      <div class="list-toolbar">
+        <a id="list-home-link" class="back-link" href="../index.html">返回首页</a>
+        <div class="lang-switch" aria-label="语言切换">
+          <button class="lang-button" type="button" data-lang-option="zh">中文</button>
+          <button class="lang-button" type="button" data-lang-option="en">English</button>
+        </div>
+      </div>
+      <div class="list-hero-copy">
+        <p class="eyebrow">Reading Collection</p>
+        <h1 id="level-title">A1</h1>
+        <p id="level-description" class="hero-text">
+          这里整理了当前等级下的阅读题组，适合按篇目逐个练习和复盘。
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="list-panel">
+        <div class="panel-header">
+          <div>
+            <p class="section-kicker">Reading List</p>
+            <h2 id="list-section-title">阅读题组</h2>
+          </div>
+          <p id="item-count" class="section-note">点击卡片进入原文、题目和答案</p>
+        </div>
+
+        <div id="list-part-switch" class="list-part-switch" hidden></div>
+        <div id="list-part-placeholder" class="list-part-placeholder" hidden></div>
+        <div id="grammar-list" class="grammar-list" aria-live="polite"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="reading-app.js"></script>
+  <script src="../shared/translations.js"></script>
+  <script src="../grammar/grammar-data.js"></script>
+  <script src="../grammar/a1-outline.js"></script>
+  <script src="reading-data.js"></script>
+  <script src="../shared/app-core.js"></script>
+  <script src="../shared/progress.js"></script>
+</body>
+</html>

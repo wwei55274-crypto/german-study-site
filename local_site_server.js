@@ -24,13 +24,22 @@ const PUBLISHABLE_SITE_FILES = [
   "index.html",
   "list.html",
   "detail.html",
-  "styles.css",
-  "translations.js",
-  "grammar-data.js",
-  "a1-outline.js",
-  "a1-subunits.js",
-  "script.js",
-  "progress.js",
+  "shared/common.css",
+  "shared/translations.js",
+  "shared/app-core.js",
+  "shared/progress.js",
+  "grammar/list.html",
+  "grammar/detail.html",
+  "grammar/grammar-app.js",
+  "grammar/grammar-data.js",
+  "grammar/a1-outline.js",
+  "grammar/a1-subunits.js",
+  "grammar/grammar.css",
+  "reading/list.html",
+  "reading/detail.html",
+  "reading/reading-app.js",
+  "reading/reading-data.js",
+  "reading/reading.css",
   "published-overrides.json"
 ];
 const SESSION_COOKIE_NAME = "german_study_session";
@@ -519,7 +528,12 @@ function shouldRedirectPublicEntryToHome(request) {
   }
 
   const pathname = getRequestPathname(request).toLowerCase();
-  const isInternalHtmlPage = pathname === "/list.html" || pathname === "/detail.html";
+  const isInternalHtmlPage = pathname === "/list.html"
+    || pathname === "/detail.html"
+    || pathname === "/grammar/list.html"
+    || pathname === "/grammar/detail.html"
+    || pathname === "/reading/list.html"
+    || pathname === "/reading/detail.html";
 
   if (!isInternalHtmlPage) {
     return false;

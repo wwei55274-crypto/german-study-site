@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>语法详情</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Noto+Serif+SC:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/common.css">
+  <link rel="stylesheet" href="grammar.css">
+</head>
+<body class="page-detail page-grammar-detail">
+  <div class="page-shell">
+    <header class="list-hero detail-hero">
+      <div class="detail-topbar">
+        <div class="detail-topbar-main">
+          <a id="detail-back-link" class="back-link" href="list.html?level=A1">返回列表</a>
+          <a id="detail-breadcrumb" class="detail-breadcrumb" href="../index.html">返回主页</a>
+        </div>
+        <div class="lang-switch" aria-label="语言切换">
+          <button class="lang-button" type="button" data-lang-option="zh">中文</button>
+          <button class="lang-button" type="button" data-lang-option="en">English</button>
+        </div>
+      </div>
+
+      <div class="list-hero-copy detail-hero-copy">
+        <p class="eyebrow">Grammar Deep Dive</p>
+        <div class="detail-hero-meta">
+          <span id="detail-level-badge" class="level-badge">A1</span>
+          <span id="detail-type" class="grammar-card-meta">基础</span>
+        </div>
+        <h1 id="detail-title">人称代词</h1>
+        <p id="detail-summary" class="hero-text">
+          在这里查看语法讲解、规则表格、练习题以及答案解析。
+        </p>
+        <div class="detail-stats">
+          <article class="mini-stat">
+            <strong id="detail-exercise-count">2</strong>
+            <span id="detail-stats-exercises">题目数</span>
+          </article>
+        </div>
+      </div>
+    </header>
+
+    <main class="detail-main">
+      <section id="detail-guide-grid" class="detail-grid">
+        <article id="detail-guide-panel" class="detail-panel">
+          <div class="panel-header detail-panel-header">
+            <div>
+              <p class="section-kicker">Grammar Guide</p>
+              <h2 id="detail-guide-title">语法讲解</h2>
+            </div>
+          </div>
+          <p id="detail-overview" class="detail-body"></p>
+          <ul id="detail-focus" class="focus-list"></ul>
+        </article>
+
+        <article id="detail-note-panel" class="detail-panel detail-note-panel">
+          <div class="panel-header detail-panel-header">
+            <div>
+              <p class="section-kicker">Study Tip</p>
+              <h2 id="detail-tip-title">学习提醒</h2>
+            </div>
+          </div>
+          <p id="detail-tip" class="detail-body"></p>
+          <div class="tip-tags">
+            <span id="detail-tip-tag-1">先看结构</span>
+            <span id="detail-tip-tag-2">再读例句</span>
+            <span id="detail-tip-tag-3">最后做题</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="detail-panel detail-panel-wide">
+        <div class="panel-header detail-panel-header">
+          <div>
+            <p class="section-kicker">Examples</p>
+            <h2 id="detail-examples-title">核心表格</h2>
+          </div>
+        </div>
+        <div id="example-list" class="example-list"></div>
+      </section>
+
+      <section class="detail-panel detail-panel-wide">
+        <div class="panel-header detail-panel-header">
+          <div>
+            <p class="section-kicker">Practice</p>
+            <h2 id="detail-practice-title">题目练习</h2>
+          </div>
+          <p id="detail-practice-note" class="section-note">包含选择题、填空题和可展开的参考答案。</p>
+        </div>
+        <div id="practice-list" class="practice-list"></div>
+      </section>
+
+      <section id="detail-local-editor" class="detail-panel detail-panel-wide detail-local-editor" hidden></section>
+
+      <section id="detail-subunits-panel" class="detail-panel detail-panel-wide detail-subunits-panel" hidden>
+        <div class="panel-header detail-panel-header">
+          <div>
+            <p class="section-kicker">Unit Outline</p>
+            <h2 id="detail-subunits-title">子单元目录</h2>
+          </div>
+          <p id="detail-subunits-note" class="section-note">先按大单元整理结构，具体讲解与练习下一步再逐个补全。</p>
+        </div>
+        <div id="detail-subunits-meta" class="detail-subunits-meta"></div>
+        <div id="detail-subunits-list" class="detail-subunits-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="ai-chat-modal" class="ai-chat-modal" hidden aria-hidden="true">
+    <div class="ai-chat-backdrop" data-ai-close></div>
+    <section class="ai-chat-panel" role="dialog" aria-modal="true" aria-labelledby="ai-chat-title">
+      <div class="ai-chat-head">
+        <h2 id="ai-chat-title">题目问 AI</h2>
+        <div class="ai-chat-head-actions">
+          <div class="ai-chat-model-picker">
+            <select id="ai-chat-model-select" class="ai-chat-model-select" aria-label="AI mode">
+              <option value="auto">Auto</option>
+              <option value="fast">Fast</option>
+              <option value="expert">Expert</option>
+              <option value="heavy">Heavy</option>
+            </select>
+          </div>
+          <button id="ai-chat-close" class="ghost-button" type="button" data-ai-close>关闭</button>
+        </div>
+      </div>
+
+      <div class="ai-chat-meta">
+        <p id="ai-chat-status" class="ai-chat-status">正在连接本地 AI…</p>
+        <div id="ai-chat-context" class="ai-chat-context" hidden></div>
+      </div>
+      <div id="ai-chat-messages" class="ai-chat-messages"></div>
+
+      <div class="ai-chat-compose">
+        <label id="ai-chat-input-label" class="ai-chat-label" for="ai-chat-input">发送给 AI</label>
+        <textarea id="ai-chat-input" class="ai-chat-input" rows="5" placeholder="题干会自动带入这里，你也可以补充自己的疑问。"></textarea>
+        <div class="ai-chat-actions">
+          <button id="ai-chat-reset" class="ghost-button" type="button">重新开始</button>
+          <button id="ai-chat-send" class="primary-button" type="button">发送</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="grammar-app.js"></script>
+  <script src="../shared/translations.js"></script>
+  <script src="grammar-data.js"></script>
+  <script src="a1-outline.js"></script>
+  <script src="a1-subunits.js"></script>
+  <script src="../shared/app-core.js"></script>
+  <script src="../shared/progress.js"></script>
+</body>
+</html>

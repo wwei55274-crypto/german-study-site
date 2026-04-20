@@ -3,53 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>语法列表</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Noto+Serif+SC:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <title>正在跳转</title>
 </head>
-<body class="page-list">
-  <div class="page-shell">
-    <header class="list-hero">
-      <div class="list-toolbar">
-        <a id="list-home-link" class="back-link" href="index.html">返回首页</a>
-        <div class="lang-switch" aria-label="语言切换">
-          <button class="lang-button" type="button" data-lang-option="zh">中文</button>
-          <button class="lang-button" type="button" data-lang-option="en">English</button>
-        </div>
-      </div>
-      <div class="list-hero-copy">
-        <p class="eyebrow">Grammar Collection</p>
-        <h1 id="level-title">A1</h1>
-        <p id="level-description" class="hero-text">
-          这里整理了当前等级下的常见语法知识点，适合按卡片逐个复习。
-        </p>
-      </div>
-    </header>
-
-    <main>
-      <section class="list-panel">
-        <div class="panel-header">
-          <div>
-            <p class="section-kicker">Topic List</p>
-            <h2 id="list-section-title">语法知识点</h2>
-          </div>
-          <p id="item-count" class="section-note">点击卡片查看讲解与练习</p>
-        </div>
-
-        <div id="list-part-switch" class="list-part-switch" hidden></div>
-        <div id="list-part-placeholder" class="list-part-placeholder" hidden></div>
-        <div id="grammar-list" class="grammar-list" aria-live="polite"></div>
-      </section>
-    </main>
-  </div>
-
-  <script src="translations.js"></script>
-  <script src="grammar-data.js"></script>
-  <script src="reading-data.js"></script>
-  <script src="a1-outline.js"></script>
-  <script src="script.js"></script>
-  <script src="progress.js"></script>
+<body>
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const target = String(params.get("part") || "").toLowerCase() === "reading"
+        ? "reading/list.html"
+        : "grammar/list.html";
+      window.location.replace(`${target}${window.location.search || ""}`);
+    }());
+  </script>
+  <p>正在跳转到新的列表页面。如果没有自动跳转，请手动打开 <a href="grammar/list.html">语法列表</a> 或 <a href="reading/list.html?level=A1&part=reading">阅读列表</a>。</p>
 </body>
 </html>

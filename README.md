@@ -38,14 +38,21 @@
 
 更细的区域分工和分支建议见 `docs/collaboration-zones.md`。
 
-## 建议分工
+## 现在的目录分工
 
-- 页面结构和样式：`index.html`、`detail.html`、`list.html`、`styles.css`
-- 页面交互和学习逻辑：`script.js`、`progress.js`
-- 数据内容：`a1-outline.js`、`a1-subunits.js`、`translations.js`、`grammar-data.js`
+- 语法板块：`grammar/`
+- 阅读板块：`reading/`
+- 公共逻辑与公共样式：`shared/`
+- 根目录兼容入口：`index.html`、`list.html`、`detail.html`
 - 本地服务和 AI bridge：`local_site_server.js`、`local_ai_bridge.js`
 
-这样拆分后，两个人同时开发时冲突会少很多。
+推荐两个人这样分：
+
+- 你负责语法：`grammar/`
+- 同事负责阅读：`reading/`
+- 只有公共跳转、共享脚本和共享样式才需要一起协调：`shared/`、`index.html`、`local_site_server.js`
+
+这样拆分后，大部分日常改动都能留在各自文件夹里，冲突会少很多。
 
 仓库里已经补充了适合 GitHub 协作的文件：
 
@@ -61,3 +68,14 @@
 - 已安装 `node`
 - 如需 AI 功能，已创建本地 `.env`
 - 能正常运行 `./start-study.sh` 或对应平台脚本
+
+## 目录说明
+
+```text
+index.html            首页
+list.html             旧列表入口，自动跳到 grammar/ 或 reading/
+detail.html           旧详情入口，自动跳到 grammar/ 或 reading/
+grammar/              语法页面、语法数据、语法样式入口
+reading/              阅读页面、阅读数据、阅读样式入口
+shared/               公共脚本、公共样式、语言与进度逻辑
+```

@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Noto+Serif+SC:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="shared/common.css">
 </head>
 <body class="page-home">
   <div class="page-shell">
@@ -19,6 +19,7 @@
         </nav>
 
         <div class="hero-toolbar-actions">
+          <a class="ghost-button" href="reading/list.html?level=A1&part=reading">打开阅读区</a>
           <div class="lang-switch" aria-label="语言切换">
             <button class="lang-button" type="button" data-lang-option="zh">中文</button>
             <button class="lang-button" type="button" data-lang-option="en">English</button>
@@ -48,14 +49,14 @@
         </div>
 
         <div class="level-grid">
-          <a class="level-card" href="list.html?level=A1">
+          <a class="level-card" href="grammar/list.html?level=A1">
             <span class="level-badge">A1</span>
             <h3 id="home-a1-title">基础表达</h3>
             <p id="home-a1-text">从人称代词、冠词、现在时到基础问句，构建最先需要掌握的核心结构。</p>
             <span id="home-a1-link" class="card-link">进入 A1</span>
           </a>
 
-          <a class="level-card" href="list.html?level=A2">
+          <a class="level-card" href="grammar/list.html?level=A2">
             <span class="level-badge">A2</span>
             <h3 id="home-a2-title">日常进阶</h3>
             <p id="home-a2-text">继续学习完成时、从句、比较级和常见介词搭配，提升表达密度。</p>
@@ -74,19 +75,19 @@
         </div>
 
         <div class="favorite-grid">
-          <a class="favorite-card" href="detail.html?level=A1&topic=verben-1">
+          <a class="favorite-card" href="grammar/detail.html?level=A1&topic=verben-1">
             <span class="favorite-tag">A1</span>
             <h3 id="home-fav-1-title">动词现在时变位</h3>
             <p id="home-fav-1-text">掌握 ich / du / er-sie-es / wir / ihr / sie 的基础变化。</p>
             <span id="home-fav-1-link" class="card-link">继续复习</span>
           </a>
-          <a class="favorite-card" href="detail.html?level=A1&topic=pronomen-nomen-artikel">
+          <a class="favorite-card" href="grammar/detail.html?level=A1&topic=pronomen-nomen-artikel">
             <span class="favorite-tag">A1</span>
             <h3 id="home-fav-2-title">一般疑问句与 W-Fragen</h3>
             <p id="home-fav-2-text">常见问句词包括 wer、wie、wo、was，适合高频复习。</p>
             <span id="home-fav-2-link" class="card-link">继续复习</span>
           </a>
-          <a class="favorite-card" href="detail.html?level=A2&topic=subordinate-clauses">
+          <a class="favorite-card" href="grammar/detail.html?level=A2&topic=subordinate-clauses">
             <span class="favorite-tag">A2</span>
             <h3 id="home-fav-3-title">weil 与 dass 从句</h3>
             <p id="home-fav-3-text">注意连词引导从句时，变位动词通常置于句末。</p>
@@ -97,10 +98,17 @@
     </main>
   </div>
 
-  <script src="translations.js"></script>
-  <script src="grammar-data.js"></script>
-  <script src="a1-outline.js"></script>
-  <script src="script.js"></script>
-  <script src="progress.js"></script>
+  <script>
+    window.STUDY_ROUTE_CONFIG = {
+      homePath: "index.html",
+      listPath: "grammar/list.html",
+      detailPath: "grammar/detail.html"
+    };
+  </script>
+  <script src="shared/translations.js"></script>
+  <script src="grammar/grammar-data.js"></script>
+  <script src="grammar/a1-outline.js"></script>
+  <script src="shared/app-core.js"></script>
+  <script src="shared/progress.js"></script>
 </body>
 </html>
